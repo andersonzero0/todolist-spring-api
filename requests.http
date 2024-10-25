@@ -13,3 +13,19 @@ Content-Type: application/json
   "description": "Description 1",
   "done": false
 }
+
+### PUT a task by id
+PUT http://localhost:8080/task/2
+Content-Type: application/json
+
+{
+  "title": "Task 2",
+  "description": "Description 2",
+  "done": false
+}
+
+### PATCH update status of a task by id
+PATCH http://localhost:8080/task/1?done=true
+
+### DELETE a task by id
+DELETE http://localhost:8080/task/2
