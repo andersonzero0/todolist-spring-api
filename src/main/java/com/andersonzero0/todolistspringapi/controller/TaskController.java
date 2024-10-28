@@ -36,7 +36,7 @@ public class TaskController {
     }
 
     @Operation(summary = "Find a task by id", method = "GET")
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}", consumes = "application/json")
     public TaskEntity findTaskById(@PathVariable Integer id) {
         TaskEntity task = taskService.findTaskById(id);
 
@@ -48,13 +48,13 @@ public class TaskController {
     }
 
     @Operation(summary = "Update a task", method = "PUT")
-    @PutMapping("/{id}")
+    @PutMapping(value = "/{id}", consumes = "application/json")
     public TaskEntity updateTask(@PathVariable Integer id, @RequestBody @Valid TaskInputDTO taskInputDTO) {
         return taskService.updateTask(id, new TaskEntity(taskInputDTO));
     }
 
     @Operation(summary = "Update a task status", method = "PATCH")
-    @PatchMapping("/{id}")
+    @PatchMapping(value = "/{id}", consumes = "application/json")
     public TaskEntity updateTaskStatus(
             @PathVariable Integer id,
             @RequestParam(value = "done", defaultValue = "false") Boolean done) {
@@ -62,7 +62,7 @@ public class TaskController {
     }
 
     @Operation(summary = "Delete a task", method = "DELETE")
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}", consumes = "application/json")
     public ResponseEntity<String> deleteTask(@PathVariable Integer id) {
         taskService.deleteTask(id);
         return ResponseEntity.ok("Task deleted");

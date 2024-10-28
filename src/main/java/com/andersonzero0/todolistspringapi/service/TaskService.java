@@ -1,7 +1,7 @@
 package com.andersonzero0.todolistspringapi.service;
 
 import com.andersonzero0.todolistspringapi.domain.task.TaskEntity;
-import com.andersonzero0.todolistspringapi.domain.task.TaskRepository;
+import com.andersonzero0.todolistspringapi.repository.TaskRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;

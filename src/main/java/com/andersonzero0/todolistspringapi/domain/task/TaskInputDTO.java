@@ -8,12 +8,17 @@ public record TaskInputDTO(
         Integer id,
 
         @NotBlank
+        Integer user_id,
+
+        @NotBlank
         String title,
 
         @NotBlank
         String description,
 
         Boolean done,
+
+        Boolean is_deleted,
 
         LocalDateTime createdAt,
 

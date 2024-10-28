@@ -1,5 +1,6 @@
 package com.andersonzero0.todolistspringapi.domain.task;
 
+import com.andersonzero0.todolistspringapi.domain.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,8 +12,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
-@Table(name = "task")
-@Entity(name = "task")
+@Table(name = "task_tb")
+@Entity(name = "task_tb")
 @EntityListeners(AuditingEntityListener.class)
 @Data
 @AllArgsConstructor
@@ -23,6 +24,10 @@ public class TaskEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private UserEntity user;
+
     @Column(nullable = false)
     private String title;
 
@@ -31,6 +36,9 @@ public class TaskEntity {
 
     @Column(nullable = false)
     private Boolean done;
+
+    @Column(nullable = false)
+    private Boolean is_deleted;
 
     @CreatedDate
     @Column(nullable = false, updatable = false, name = "created_at")
