@@ -55,7 +55,11 @@ public class UserEntity implements UserDetails {
     public UserEntity(RegisterUserDTO registerUserDTO) {
         this.username = registerUserDTO.username();
         this.password = registerUserDTO.password();
-        this.role = UserRole.valueOf(registerUserDTO.role());
+        this.role = registerUserDTO.role();
+    }
+
+    public UserEntity(Integer id) {
+        this.id = id;
     }
 
     @Override

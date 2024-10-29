@@ -1,4 +1,15 @@
 package com.andersonzero0.todolistspringapi.domain.user;
 
-public record RegisterUserDTO(String username, String password, String role) {
+import jakarta.validation.constraints.NotBlank;
+
+public record RegisterUserDTO(
+        @NotBlank
+        String username,
+
+        @NotBlank
+        String password,
+
+        @NotBlank
+        UserRole role
+) {
 }

@@ -1,6 +1,27 @@
+### POST register a new user
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0b2RvbGlzdC1zcHJpbmctYXBpIiwic3ViIjoidXNlcjEiLCJleHAiOjE3MzAyNDMwNDJ9.EGGStL66bKh8Rm75blJIomLQfBkd9MKpplQCDBCyD-A
+
+{
+  "username": "user4",
+  "password": "password4",
+  "role": "ADMIN"
+}
+
+### POST login
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "password1"
+}
+
 ### GET all tasks
 GET http://localhost:8080/task
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0b2RvbGlzdC1zcHJpbmctYXBpIiwic3ViIjoidXNlcjEiLCJleHAiOjE3MzAyNDMwNDJ9.EGGStL66bKh8Rm75blJIomLQfBkd9MKpplQCDBCyD-A
 
 ### GET a task by id
 GET http://localhost:8080/task/3
@@ -9,11 +30,11 @@ Content-Type: application/json
 ### POST a new task
 POST http://localhost:8080/task
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0b2RvbGlzdC1zcHJpbmctYXBpIiwic3ViIjoidXNlcjEiLCJleHAiOjE3MzAyNDMwNDJ9.EGGStL66bKh8Rm75blJIomLQfBkd9MKpplQCDBCyD-A
 
 {
-  "title": "Task 1",
-  "description": "Description 1",
-  "done": false
+  "title": "Task 2",
+  "description": "Description 2"
 }
 
 ### PUT a task by id

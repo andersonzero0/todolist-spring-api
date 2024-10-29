@@ -50,9 +50,11 @@ public class TaskEntity {
 
     public TaskEntity(TaskInputDTO taskInputDTO) {
         //this.id = taskInputDTO.id();
+        this.user = new UserEntity(taskInputDTO.user_id());
         this.title = taskInputDTO.title();
         this.description = taskInputDTO.description();
         this.done = taskInputDTO.done();
+        this.is_deleted = taskInputDTO.is_deleted();
         this.createdAt = taskInputDTO.createdAt();
         this.updatedAt = taskInputDTO.updatedAt();
     }
