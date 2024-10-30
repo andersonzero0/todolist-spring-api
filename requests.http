@@ -1,12 +1,12 @@
 ### POST register a new user
 POST http://localhost:8080/auth/register
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0b2RvbGlzdC1zcHJpbmctYXBpIiwic3ViIjoidXNlcjEiLCJleHAiOjE3MzAyNDMwNDJ9.EGGStL66bKh8Rm75blJIomLQfBkd9MKpplQCDBCyD-A
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0b2RvbGlzdC1zcHJpbmctYXBpIiwic3ViIjoidXNlcjUiLCJleHAiOjE3MzAzMDcyNzJ9.5iFhTgK6vUTRiUHdYoJJoYpk6wzKbv4_EVUWAWC4smo
 
 {
-  "username": "user4",
-  "password": "password4",
-  "role": "ADMIN"
+  "username": "user6",
+  "password": "password6",
+  "role": "USER"
 }
 
 ### POST login
@@ -21,7 +21,7 @@ Content-Type: application/json
 ### GET all tasks
 GET http://localhost:8080/task
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0b2RvbGlzdC1zcHJpbmctYXBpIiwic3ViIjoidXNlcjEiLCJleHAiOjE3MzAyNDMwNDJ9.EGGStL66bKh8Rm75blJIomLQfBkd9MKpplQCDBCyD-A
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0b2RvbGlzdC1zcHJpbmctYXBpIiwic3ViIjoidXNlcjEiLCJleHAiOjE3MzAzMDY2NzF9.-hwm1BZVly41nCtd1xIidQ3Re18PS-KU0Pr6vnBHDrM
 
 ### GET a task by id
 GET http://localhost:8080/task/3
@@ -30,11 +30,12 @@ Content-Type: application/json
 ### POST a new task
 POST http://localhost:8080/task
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0b2RvbGlzdC1zcHJpbmctYXBpIiwic3ViIjoidXNlcjEiLCJleHAiOjE3MzAyNDMwNDJ9.EGGStL66bKh8Rm75blJIomLQfBkd9MKpplQCDBCyD-A
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0b2RvbGlzdC1zcHJpbmctYXBpIiwic3ViIjoidXNlcjEiLCJleHAiOjE3MzAzMDc5MDB9.2M2ZvvZzaQFmuQkQTAvq8H3Of93-58hALUOTmZtPewg
 
 {
   "title": "Task 2",
-  "description": "Description 2"
+  "description": "Description 2",
+  "user_id": 1
 }
 
 ### PUT a task by id

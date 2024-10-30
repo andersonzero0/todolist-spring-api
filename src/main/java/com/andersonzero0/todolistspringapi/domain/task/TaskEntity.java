@@ -28,6 +28,9 @@ public class TaskEntity {
     @JoinColumn(name = "user_id", nullable = false)
     private UserEntity user;
 
+    @Column(nullable = false, insertable = false, updatable = false)
+    private Integer user_id;
+
     @Column(nullable = false)
     private String title;
 

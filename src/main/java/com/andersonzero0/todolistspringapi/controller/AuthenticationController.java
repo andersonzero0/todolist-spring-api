@@ -39,11 +39,11 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<RegisterResponseDTO> register(@RequestBody @Valid RegisterUserDTO data) {
+    public ResponseEntity<?> register(@RequestBody @Valid RegisterUserDTO data) {
          var user = this.userService.registerUser(new UserEntity(data));
 
          if(user == null) {
-             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "User already exists");
+             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("User already exists");
          }
 
         return ResponseEntity.ok(new RegisterResponseDTO(user.getUsername(), user.getRole()));
